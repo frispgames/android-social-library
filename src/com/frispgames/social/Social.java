@@ -1,41 +1,64 @@
 package com.frispgames.social;
 
-import com.unity3d.player.UnityPlayerActivity;
+import android.app.Activity;
+import android.content.Context;
 import android.content.Intent;
-import android.os.Bundle;
+import android.graphics.Bitmap;
+import android.graphics.Bitmap.CompressFormat;
+import android.graphics.BitmapFactory;
+import android.net.Uri;
+import android.provider.MediaStore;
+import android.provider.MediaStore.Images;
+import android.provider.MediaStore.Images.Media;
 import android.util.Log;
+import android.util.Base64;
 
-/**
- * Created by treach3r on 8/03/15.
- */
-public class Social extends UnityPlayerActivity {
+import java.io.ByteArrayOutputStream;
+import com.unity3d.player.UnityPlayer;
 
-    private static Social singleton = null;
-    private Context context;
 
-    public static Social instance() {
-        if(singleton == null) {
-            singleton = new Social();
+public class Social {
+
+    public static void ShareImage(String caption, String message, String media) {
+        try {
+            byte[] byteArray = Base64.decode(media, 0);
+
+            Uri image = getImageUri(UnityActivity(), byteArray);
+
+            Intent shareIntent = new Intent();
+            shareIntent.setAction(Intent.ACTION_SEND);
+            shareIntent.setType("image/*");
+            shareIntent.putExtra(Intent.EXTRA_TEXT, message);
+            shareIntent.putExtra(Intent.EXTRA_STREAM, image);
+            shareIntent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_WHEN_TASK_RESET);
+            shareIntent.addFlags(Intent.FLAG_GRANT_READ_URI_PERMISSION);
+
+            UnityActivity().startActivity(Intent.createChooser(shareIntent, caption));
+
+        } catch (Exception e) {
+          e.printStackTrace();
         }
-        return singleton;
     }
 
-    @Override
-    public void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
+    public static Uri getImageUri(Context Context, byte[] byteArray) {
+        try {
+            Bitmap bitmap = BitmapFactory.decodeByteArray(byteArray, 0, byteArray.length);
+
+            ByteArrayOutputStream bytes = new ByteArrayOutputStream();
+
+            bitmap.compress(Bitmap.CompressFormat.JPEG, 100, bytes);
+
+            String path = MediaStore.Images.Media.insertImage(Context.getContentResolver(), bitmap, "Screenshot", null);
+
+            return Uri.parse(path);
+        } catch (Exception ex) {
+            Log.d("Social", ex.getMessage());
+        }
+
+        return Uri.parse("");
     }
 
-    public void setContext(Context context) {
-        this.context = context;
-    }
-
-    public void shareImage(String text, String image) {
-        Log.d("BouncyBones", "Sharing bro!");
-        Intent shareIntent = new Intent();
-        shareIntent.setAction(Intent.ACTION_SEND);
-        shareIntent.putExtra(Intent.EXTRA_TEXT, text);
-        shareIntent.putExtra(Intent.EXTRA_STREAM, image);
-        shareIntent.setType("image/jpeg");
-        startActivity(Intent.createChooser(shareIntent, "Bouncy Bones"));
+    public static Activity UnityActivity() {
+        return UnityPlayer.currentActivity;
     }
 }
