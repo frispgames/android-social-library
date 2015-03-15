@@ -1,7 +1,7 @@
 # Frisp Android Social Library
 
 ### What does it do?
-Provides an interface into the android API for sharing to social media. Currently only supports sharing of images and text. This was created for the android component of frisp-social-unity-asset.
+Provides an interface into the android API for sharing to social media. Currently only supports sharing of images and text. This was created for the android component of [frisp-social-unity-asset](https://github.com/frispgames/frisp-social-unity-asset).
 
 ### Usage
 
