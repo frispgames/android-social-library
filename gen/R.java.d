@@ -1,7 +1,10 @@
-/Users/treach3r/Unity/android-plugins/frisp-social/gen/com/frispgames/frispsocial/R.java \
- : /Users/treach3r/Unity/android-plugins/frisp-social/res/drawable-hdpi/ic_launcher.png \
-/Users/treach3r/Unity/android-plugins/frisp-social/res/drawable-ldpi/ic_launcher.png \
-/Users/treach3r/Unity/android-plugins/frisp-social/res/drawable-mdpi/ic_launcher.png \
-/Users/treach3r/Unity/android-plugins/frisp-social/res/layout/main.xml \
-/Users/treach3r/Unity/android-plugins/frisp-social/res/values/strings.xml \
-/Users/treach3r/Unity/android-plugins/frisp-social/bin/AndroidManifest.xml \
+/Users/treach3r/Unity/android-plugins/android-social-library/gen/com/frispgames/frispsocial/R.java \
+ : /Users/treach3r/Unity/android-plugins/android-social-library/res/drawable-hdpi/ic_launcher.png \
+/Users/treach3r/Unity/android-plugins/android-social-library/res/drawable-ldpi/ic_launcher.png \
+/Users/treach3r/Unity/android-plugins/android-social-library/res/drawable-mdpi/ic_launcher.png \
+/Users/treach3r/Unity/android-plugins/android-social-library/res/layout/main.xml \
+/Users/treach3r/Unity/android-plugins/android-social-library/res/values/strings.xml \
+/Users/treach3r/Unity/android-plugins/android-social-library/bin/res/drawable-hdpi/ic_launcher.png \
+/Users/treach3r/Unity/android-plugins/android-social-library/bin/res/drawable-ldpi/ic_launcher.png \
+/Users/treach3r/Unity/android-plugins/android-social-library/bin/res/drawable-mdpi/ic_launcher.png \
+/Users/treach3r/Unity/android-plugins/android-social-library/bin/AndroidManifest.xml \

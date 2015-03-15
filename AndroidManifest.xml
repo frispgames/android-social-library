@@ -4,6 +4,7 @@
       android:versionCode="1"
       android:versionName="1.0">
     <application android:label="@string/app_name" android:icon="@drawable/ic_launcher">
+        <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
         <activity android:name="ACTIVITY_ENTRY_NAME"
                   android:label="@string/app_name">
             <intent-filter>
