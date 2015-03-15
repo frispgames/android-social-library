@@ -68,6 +68,10 @@
     -->
     <import file="custom_rules.xml" optional="true" />
 
+    <target name="jar" depends="debug">
+        <jar destfile="bin/frisp-social.jar" basedir="bin/classes" />
+    </target>
+
     <!-- Import the actual build file.
 
          To customize existing targets, there are two options:
@@ -87,11 +91,6 @@
          in order to avoid having your file be overridden by tools such as "android update project"
     -->
     <!-- version-tag: 1 -->
-
-    <target name="jar" depends="debug">
-        <jar destfile="bin/FrispSocial.jar" basedir="bin/classes" />
-    </target>
-
     <import file="${sdk.dir}/tools/ant/build.xml" />
 
 </project>
