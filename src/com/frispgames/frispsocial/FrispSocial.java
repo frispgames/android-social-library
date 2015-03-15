@@ -17,7 +17,7 @@ import com.unity3d.player.UnityPlayer;
 
 public class FrispSocial {
 
-    public static void ShareImage(String caption, String message, String media) {
+    public static void shareImage(String caption, String message, String media) {
         try {
             byte[] byteArray = Base64.decode(media, 0);
 
@@ -31,14 +31,14 @@ public class FrispSocial {
             shareIntent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_WHEN_TASK_RESET);
             shareIntent.addFlags(Intent.FLAG_GRANT_READ_URI_PERMISSION);
 
-            UnityActivity().startActivity(Intent.createChooser(shareIntent, caption));
+            unityActivity().startActivity(Intent.createChooser(shareIntent, caption));
 
         } catch (Exception e) {
           e.printStackTrace();
         }
     }
 
-    public static Uri getImageUri(Context Context, byte[] byteArray) {
+    private static Uri getImageUri(Context Context, byte[] byteArray) {
         try {
             Bitmap bitmap = BitmapFactory.decodeByteArray(byteArray, 0, byteArray.length);
 
@@ -56,7 +56,7 @@ public class FrispSocial {
         return Uri.parse("");
     }
 
-    public static Activity UnityActivity() {
+    private static Activity unityActivity() {
         return UnityPlayer.currentActivity;
     }
 }
