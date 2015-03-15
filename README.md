@@ -1,10 +1,9 @@
-# Social Plugin
+# Frisp Social Plugin
 Unity plugin for managing native sharing on android.
 
 ### Build
 
-Run ant jar in the directory to build a jar file for the social plugin
-
+Run ```ant jar``` in the directory to build a jar file for the social plugin
 
 ### Integrating with Unity
 

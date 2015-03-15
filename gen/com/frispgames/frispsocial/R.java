@@ -5,7 +5,7 @@
  * should not be modified by hand.
  */
 
-package com.frispgames.social;
+package com.frispgames.frispsocial;
 
 public final class R {
     public static final class attr {

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<project name="Social" default="help">
+<project name="FrispSocial" default="help">
 
     <!-- The local.properties file is created and updated by the 'android' tool.
          It contains the path to the SDK. It should *NOT* be checked into
@@ -89,7 +89,7 @@
     <!-- version-tag: 1 -->
 
     <target name="jar" depends="debug">
-        <jar destfile="bin/Social.jar" basedir="bin/classes" />
+        <jar destfile="bin/FrispSocial.jar" basedir="bin/classes" />
     </target>
 
     <import file="${sdk.dir}/tools/ant/build.xml" />

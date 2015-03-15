@@ -1,4 +1,4 @@
-package com.frispgames.social;
+package com.frispgames.frispsocial;
 
 import android.app.Activity;
 import android.content.Context;
@@ -12,12 +12,10 @@ import android.provider.MediaStore.Images;
 import android.provider.MediaStore.Images.Media;
 import android.util.Log;
 import android.util.Base64;
-
 import java.io.ByteArrayOutputStream;
 import com.unity3d.player.UnityPlayer;
 
-
-public class Social {
+public class FrispSocial {
 
     public static void ShareImage(String caption, String message, String media) {
         try {
@@ -52,7 +50,7 @@ public class Social {
 
             return Uri.parse(path);
         } catch (Exception ex) {
-            Log.d("Social", ex.getMessage());
+            Log.d("FrispSocial", ex.getMessage());
         }
 
         return Uri.parse("");
