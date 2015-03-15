@@ -1,5 +1,13 @@
-# Frisp Social Plugin
-Unity plugin for managing native sharing on android.
+# Frisp Social 
+
+### What does it do?
+Provides an interface into the android API for sharing to social media. Currently only supports sharing of images and text through social media.
+
+### Usage
+
+```JAVA
+  FrispSocial.shareImage("Caption", "Message", "Base64Image");
+```
 
 ### Build
 
