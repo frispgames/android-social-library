@@ -21,7 +21,7 @@ public class FrispSocial {
         try {
             byte[] byteArray = Base64.decode(media, 0);
 
-            Uri image = getImageUri(UnityActivity(), byteArray);
+            Uri image = getImageUri(unityActivity(), byteArray);
 
             Intent shareIntent = new Intent();
             shareIntent.setAction(Intent.ACTION_SEND);
